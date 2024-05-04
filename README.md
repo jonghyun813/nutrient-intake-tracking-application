@@ -124,7 +124,7 @@ Django에서 공식적으로 지원하는 데이터베이스는 모두 RDBMS 계
 
 따라서, 우선 그림자나 빛과 같은 noise을 제거하기 위해 gaussian blur denoising을 사용하였다. Denoising이 적용되기 전후 사진은 아래와 같으며, 불필요한 그림자나 빛 반사 영역이 없어진 것을 확인할 수 있다.
 
-<div style="display: flex; justify-content: center; align-items: center;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/a9d519b8-34e5-4fea-9cb8-3940a9cd6dc9" alt="Image 1" style="width: 25%; height: auto;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/a8669bf6-d138-4981-98ab-fed883e00ee2" alt="Image 2" style="width: 25%; height: auto;"> </div>
+<div align="center" style="display: flex; justify-content: center; align-items: center;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/a9d519b8-34e5-4fea-9cb8-3940a9cd6dc9" alt="Image 1" style="width: 25%; height: auto;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/a8669bf6-d138-4981-98ab-fed883e00ee2" alt="Image 2" style="width: 25%; height: auto;"> </div>
 
 
 
