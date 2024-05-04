@@ -136,7 +136,7 @@ Django에서 공식적으로 지원하는 데이터베이스는 모두 RDBMS 계
 
 아래 그림은 왼쪽부터 Denoising 결과, Canny Edge Detection 결과, Hough Line Transform 결과, Rotation 결과
 
-<div style="display: flex; justify-content: center; align-items: center;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/c32a8c7a-6718-42e7-abf4-275fce263a76" alt="Image 1" style="width: 25%; height: auto;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/321591d6-d0a6-4246-9960-3ebc1c8179f2" alt="Image 2" style="width: 25%; height: auto;"> <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/f6530ae7-9b2b-4ba9-9fc1-69030a75fa47" alt="Image 3" style="width: 25%; height: auto;">  <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/38af98d6-8c9a-4d93-860b-5735222493f6" alt="Image 4" style="width: 25%; height: auto;"></div>
+<div align="center" style="display: flex; justify-content: center; align-items: center;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/c32a8c7a-6718-42e7-abf4-275fce263a76" alt="Image 1" style="width: 25%; height: auto;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/321591d6-d0a6-4246-9960-3ebc1c8179f2" alt="Image 2" style="width: 25%; height: auto;"> <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/f6530ae7-9b2b-4ba9-9fc1-69030a75fa47" alt="Image 3" style="width: 25%; height: auto;">  <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/38af98d6-8c9a-4d93-860b-5735222493f6" alt="Image 4" style="width: 25%; height: auto;"></div>
 
 
 
@@ -154,11 +154,11 @@ Django에서 공식적으로 지원하는 데이터베이스는 모두 RDBMS 계
 
 세로형 성분표인 경우에는 아래 오른쪽 그림과 같이 아래에 있는 2개의 숫자 중, 옆에 ‘g’라는 문자가 있는 숫자로 매칭하였다.
 
-<div style="display: flex; justify-content: center; align-items: center;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/4760956d-dd13-4b56-956d-90d49651f51f" alt="Image 1" style="width: 30%; height: auto;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/cf559efe-f7b6-4007-9d89-d5af724b141f" alt="Image 2" style="width: 30%; height: auto;"> </div>
+<div align="center" style="display: flex; justify-content: center; align-items: center;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/4760956d-dd13-4b56-956d-90d49651f51f" alt="Image 1" style="width: 30%; height: auto;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/cf559efe-f7b6-4007-9d89-d5af724b141f" alt="Image 2" style="width: 30%; height: auto;"> </div>
 
 이 방법을 사용했을 때 일반적인 영양성분표에서는 문제가 없다. 그러나 아래와 같이 영양성분 정보가 다른 줄에 걸쳐서 배치된 경우 위치 기반 알고리즘으로 추출되지 않는다는 점이다. 이를 해결하기 위해, 문자열 기반으로 영양성분을 추출하는 알고리즘을 추가하였다.
 
-<div style="display: flex; justify-content: center; align-items: center;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/91c73510-8f04-4117-840c-2a3ad85b83c8" alt="Image 1" style="width: 30%; height: auto;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/9a18446c-2d13-468c-a8f6-a9dad334cc56" alt="Image 2" style="width: 30%; height: auto;"> </div>
+<div align="center" style="display: flex; justify-content: center; align-items: center;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/91c73510-8f04-4117-840c-2a3ad85b83c8" alt="Image 1" style="width: 30%; height: auto;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/9a18446c-2d13-468c-a8f6-a9dad334cc56" alt="Image 2" style="width: 30%; height: auto;"> </div>
 
 **문자열** **기반** **추출** **알고리즘**
 
