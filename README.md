@@ -47,7 +47,7 @@
 
 <br />
 
-**Backend Web Framework – Django**
+**Backend Framework – Django**
 
 OCR을 활용하여 영양 성분 정보를 정확히 추출해내기 위해서는 사진에 대한 전처리가 필요하다. 사진 전처리에는 파이썬 라이브러리를 활용할 계획인데, Node js와 같이 다른 언어로 된 framework를 사용하면 외부 script를 실행하는 데 overhead가 발생할 것으로 예상되었다. 따라서 파이썬 기반의 framework인 Django를 채택하였다.
 
