@@ -114,11 +114,13 @@ Django에서 공식적으로 지원하는 데이터베이스는 모두 RDBMS 계
   
 ### 6. OCR로부터 영양소 양을 매칭하는 알고리즘 동작 과정
 
+<br />
+
 #### **(1) Image Preprocessing**
 
 이미지 전처리는 정확한 OCR을 위해 필요하다. 영양성분표의 일부 글자가 그림자로 인해 잘 보이지 않는 경우가 가끔 있고, 비닐이나 캔 등의 재질로 만들어진 제품들은 빛 반사에 의해 글자가 가려지는 경우가 생긴다. 추가적으로, 사용자가 사진을 수평에 맞게 찍지 않고 틀어서 찍더라도 텍스트 인식이 제대로 되도록 하기 위해, skew correction을 진행하였다.
 
-
+<br />
 
 **Denoising**
 
@@ -126,19 +128,19 @@ Django에서 공식적으로 지원하는 데이터베이스는 모두 RDBMS 계
 
 <div align="center" style="display: flex; justify-content: center; align-items: center;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/a9d519b8-34e5-4fea-9cb8-3940a9cd6dc9" alt="Image 1" style="width: 25%; height: auto;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/a8669bf6-d138-4981-98ab-fed883e00ee2" alt="Image 2" style="width: 25%; height: auto;"> </div>
 
-
+<br />
 
 **Skew Correction**
 
 틀어서 찍힌 사진은 우선 가로로 된 선들을 찾은 후, x축 기준으로 틀어진 각도의 평균만큼 사진을 회전시켜 수평을 맞추었다. 사진에 존재하는 가로 선들을 찾기 위해서는 사진에 존재하는 edge를 찾는 과정이 선행되어야 하며, 이를 위해서는 canny edge detection을 사용하였다. 이후 hough line transform을 통해 사진에 존재하는 선들을 찾았다. Hough line transformation은 OpenCV 라이브러리에 존재하는데, cv2.HoughLines()와 cv2.HoughLinesP() 두 가지가 있다. 둘의 가장 큰 차이점은 직선임을 판단하기 위해 검사하는 점의 개수이다. 전자는 모든 점에 대해 계산을 하기 때문에 시간이 오래 걸리지만, 후자는 임의의 점을 이용하여 직선을 찾기 때문에 속도가 빠르다. 따라서 후자를 통해 사진에 존재하는 선들을 찾았다. X축을 기준으로 하였을 때 45° 보다 작은 각도로 기울어진 선들을 가로 선으로 추정하고, 이들의 평균 각도만큼 사진을 회전시켰다. 결과는 아래와 같다.
 
-
+<br />
 
 아래 그림은 왼쪽부터 Denoising 결과, Canny Edge Detection 결과, Hough Line Transform 결과, Rotation 결과
 
 <div align="center" style="display: flex; justify-content: center; align-items: center;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/c32a8c7a-6718-42e7-abf4-275fce263a76" alt="Image 1" style="width: 20%; height: auto;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/321591d6-d0a6-4246-9960-3ebc1c8179f2" alt="Image 2" style="width: 20%; height: auto;"> <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/f6530ae7-9b2b-4ba9-9fc1-69030a75fa47" alt="Image 3" style="width: 20%; height: auto;">  <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/38af98d6-8c9a-4d93-860b-5735222493f6" alt="Image 4" style="width: 20%; height: auto;"></div>
 
-
+<br />
 
 #### (2) 영양 성분 매칭
 
@@ -146,7 +148,6 @@ Django에서 공식적으로 지원하는 데이터베이스는 모두 RDBMS 계
 
 이미지 전처리 후, 영양성분표에 존재하는 각 영양소의 양을 파악하기 위해 Google Cloud Vision API를 사용하여 사진에 있는 텍스트를 추출하였다. Google Cloud Vision API는 응답으로 텍스트 뿐만 아니라 각 단어의 bounding box 위치까지 제공하기 때문에, bounding box의 위치를 기반으로 각 영양소 양을 매칭하기로 하였다. 아래와 같이 가로로 된 영양성분표의 경우에는 세로 좌표를 비교함으로써, 세로로 된 영양성분표는 가로 좌표를 통해 영양성분 양을 매칭하였다.
 
- 
 
 영양성분표에 있는 영양소 양은 실제 양인 g, 그리고 영양성분에서 차지하는 비율 % 두 가지가 있다. g에 대응되는 숫자는 영양소 단어의 옆에(가로형 성분표인 경우) 있는 단어 4개를 합친 다음, regular expression을 통해 첫 번째 ‘g’ 앞에 나오는 숫자로 판단하였다. 옆에 있는 단어 4개를 보는 이유는 아래 왼쪽 그림과 같이 ‘25g’이라는 문자열이 ‘25’, ‘g’으로 분리되어 검출될 수도 있고, ‘25g’ 하나로 검출될 수도 있기 때문이다. 추가적으로 ‘25g 8%’가 아닌 ‘8% 25g’으로 배치되어 있는 영양성분표 존재 가능성을 염두에 두어, ‘8’, ‘%’, ‘25’, ‘g’, 4개의 단어를 포함시킨 것이다.
 
@@ -159,6 +160,8 @@ Django에서 공식적으로 지원하는 데이터베이스는 모두 RDBMS 계
 이 방법을 사용했을 때 일반적인 영양성분표에서는 문제가 없다. 그러나 아래와 같이 영양성분 정보가 다른 줄에 걸쳐서 배치된 경우 위치 기반 알고리즘으로 추출되지 않는다는 점이다. 이를 해결하기 위해, 문자열 기반으로 영양성분을 추출하는 알고리즘을 추가하였다.
 
 <div align="center" style="display: flex; justify-content: center; align-items: center;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/91c73510-8f04-4117-840c-2a3ad85b83c8" alt="Image 1" style="width: 30%; height: auto;">   <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/9a18446c-2d13-468c-a8f6-a9dad334cc56" alt="Image 2" style="width: 30%; height: auto;"> </div>
+
+<br />
 
 **문자열** **기반** **추출** **알고리즘**
 
@@ -182,7 +185,7 @@ Google Cloud Vision API OCR의 응답에 들어있는 단어들의 순서는 이
 
 생성된 배열에서의 영양소 양 매칭 과정은 위치 기반 추출 알고리즘에서 regular expression을 사용하여 매칭하는 과정과 동일하다.
 
- 
+ <br />
 
 **알고리즘** **동작** **순서**
 
