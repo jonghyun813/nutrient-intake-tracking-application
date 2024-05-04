@@ -37,7 +37,7 @@
 
 ### 4. System Architecture
 <p align="center">
-  <img alt="그림1" src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/6a8bbb9c-7d5f-46fa-a6ee-2b2744906711">
+  <img alt="그림1" src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/6a8bbb9c-7d5f-46fa-a6ee-2b2744906711" width="50%">
 </p>
 
 **Frontend Framework – Flutter**
@@ -91,7 +91,7 @@ Django에서 공식적으로 지원하는 데이터베이스는 모두 RDBMS 계
 - 만약 잘못된 영양소 정보가 존재한다면, 사용자가 수정할 수 있다.
 
 <p align="center">
-  <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/71a623be-b307-4da7-9f21-f7e8347c0466" style="zoom: 5%;" alt="demo_ocr">
+  <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/71a623be-b307-4da7-9f21-f7e8347c0466" width="25%" alt="demo_ocr">
 </p>
 
 
@@ -105,7 +105,7 @@ Django에서 공식적으로 지원하는 데이터베이스는 모두 RDBMS 계
 - 권장 섭취량만큼 먹지 못한 영양소가 있다면 얼마나 더 먹어야 하는 지 표시한다.
 
 <p align="center">
-  <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/ecac6c86-30a3-49b7-8fd0-85292e640b02" style="zoom: 5%;" alt="demo_ocr">
+  <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/ecac6c86-30a3-49b7-8fd0-85292e640b02" width="25%" alt="demo_ocr">
 </p>
 
 
