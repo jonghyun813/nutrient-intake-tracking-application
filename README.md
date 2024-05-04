@@ -78,7 +78,7 @@ Django에서 공식적으로 지원하는 데이터베이스는 모두 RDBMS 계
 - 회원가입 시 사용자의 정보(나이, 성별, 키, 몸무게, 식단 목표, 평소 활동량, 근육량, 체지방률)을 바탕으로 사용자에게 알맞은 영양 섭취량을 계산한다.
 
 <p align="center">
-  <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/e2d855d3-5a22-4028-9109-ba5ec35f362e" style="zoom: 5%;" alt="demo_ocr">
+  <img src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/e2d855d3-5a22-4028-9109-ba5ec35f362e" width="25%" alt="demo_ocr">
 </p>
 
 
