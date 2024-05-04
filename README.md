@@ -32,6 +32,7 @@
 ### 3. 해결방법
 
 영양성분표에 표기된 정보를 OCR로 인식하여 식단을 기록한다면, DB에 존재하지 않거나 잘못된 데이터가 저장되어 있는 문제점을 해결할 수 있을 것이라 판단하였다.
+
 <br />
 
 
@@ -67,6 +68,7 @@ Django에서 공식적으로 지원하는 데이터베이스는 모두 RDBMS 계
 **OCR – Google Cloud Vision API**
 
 이미지 전처리를 제대로 진행해도, OCR이 정확하게 되지 않으면 소용이 없다. 따라서 OCR API를 선택하는 데 있어서 가장 중요하게 여겼던 것은 OCR 정확도였다. 한글에 대해 안정적인 정확도를 내는 API에는 Google Cloud Vision, Naver Clova 크게 두 가지가 있다. 이 둘의 정확도 차이는 크지 않지만, Google Cloud Vision API가 저렴하면서도 응답 속도가 빠르다고 알려져 있기에 Google Cloud Vision을 사용하게 되었다.
+
 <br />
   
 
