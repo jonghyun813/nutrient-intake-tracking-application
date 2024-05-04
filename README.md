@@ -38,7 +38,7 @@
 
 ### 4. System Architecture
 <p align="center">
-  <img alt="그림1" src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/6a8bbb9c-7d5f-46fa-a6ee-2b2744906711" width="50%">
+  <img alt="그림1" src="https://github.com/jonghyun813/nutrient-intake-tracking-application/assets/66056087/6a8bbb9c-7d5f-46fa-a6ee-2b2744906711" width="75%">
 </p>
 
 **Frontend Framework – Flutter**
